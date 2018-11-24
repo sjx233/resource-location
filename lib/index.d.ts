@@ -1,4 +1,4 @@
-export default class ResourceLocation {
+declare class ResourceLocation {
     readonly domain: string;
     readonly path: string;
     constructor(domain: string, path?: string);
@@ -6,4 +6,4 @@ export default class ResourceLocation {
     toPath(basePath: string): string;
     static from(obj: string | ResourceLocation): ResourceLocation;
 }
-//# sourceMappingURL=index.d.ts.map
+export = ResourceLocation;

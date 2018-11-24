@@ -1,6 +1,6 @@
 import path from "path";
 
-export default class ResourceLocation {
+class ResourceLocation {
   public readonly domain: string;
   public readonly path: string;
 
@@ -27,3 +27,5 @@ export default class ResourceLocation {
     return typeof obj === "string" ? new ResourceLocation(obj) : obj;
   }
 }
+
+export = ResourceLocation;
