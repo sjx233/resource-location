@@ -19,8 +19,8 @@ class ResourceLocation {
     return this.domain + ":" + this.path;
   }
 
-  public toPath(basePath: string) {
-    return path.join(this.domain, basePath, this.path);
+  public toPath(base: string, extension = "") {
+    return path.join(this.domain, base, this.path + extension);
   }
 
   public static from(obj: string | ResourceLocation) {
