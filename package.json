@@ -2,36 +2,36 @@
   "name": "resource-location",
   "version": "2.1.0",
   "description": "Implementation of resource location.",
+  "keywords": [
+    "minecraft"
+  ],
+  "homepage": "https://github.com/sjx233/resource-location#readme",
+  "bugs": "https://github.com/sjx233/resource-location/issues",
+  "license": "MIT",
+  "author": "sjx233",
   "main": "lib/index.js",
   "typings": "lib/index",
+  "directories": {
+    "lib": "lib",
+    "test": "lib/test"
+  },
+  "repository": "github:sjx233/resource-location",
   "scripts": {
     "lint": "tslint --project .",
     "lint-fix": "tslint --project . --fix",
     "build": "rm -rf lib && tsc",
     "test": "node lib/test/test.js",
-    "preversion": "npm test",
-    "version": "npm run build && git add -A lib",
+    "preversion": "npm run build && npm test",
+    "version": "git add -A lib",
     "postversion": "git push && git push --tags"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sjx233/resource-location.git"
-  },
-  "author": "sjx233",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/sjx233/resource-location/issues"
-  },
-  "homepage": "https://github.com/sjx233/resource-location#readme",
-  "keywords": [
-    "minecraft"
-  ],
-  "dependencies": {
-    "tslib": "^1.9.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/node": "^10.12.0",
     "tslint": "^5.11.0",
     "typescript": "^3.1.1"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
