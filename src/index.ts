@@ -11,7 +11,7 @@ class ResourceLocation {
       domain = indexOfColon === -1 ? "minecraft" : domain.substring(0, indexOfColon);
     }
     if (!/^[a-z0-9_.-]*$/g.test(domain)) throw new SyntaxError("Invalid resource location: non [a-z0-9_.-] character in domain");
-    if (!/^[a-z0-9/_.-]*$/g.test(domain)) throw new SyntaxError("Invalid resource location: non [a-z0-9/_.-] character in path");
+    if (!/^[a-z0-9/_.-]*$/g.test(path)) throw new SyntaxError("Invalid resource location: non [a-z0-9/_.-] character in path");
     this.domain = domain;
     this.path = path;
   }
