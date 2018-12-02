@@ -33,6 +33,11 @@ class ResourceLocation {
     return path.join(this.namespace, base, this.path + extension);
   }
 
+  public is(obj: string | ResourceLocation) {
+    obj = ResourceLocation.from(obj);
+    return this.namespace === obj.namespace && this.path === obj.path;
+  }
+
   public static from(obj: string | ResourceLocation) {
     return typeof obj === "string" ? new ResourceLocation(obj) : obj;
   }
