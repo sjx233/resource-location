@@ -15,12 +15,12 @@ class ResourceLocation {
 
   public constructor(namespace: string, path?: string, separator = ":") {
     if (!path) {
-      const indexOfColon = namespace.indexOf(separator);
-      path = namespace.substring(indexOfColon + 1);
-      namespace = indexOfColon === -1 ? "minecraft" : namespace.substring(0, indexOfColon);
+      const indexOfSeparator = namespace.indexOf(separator);
+      path = namespace.substring(indexOfSeparator + 1);
+      namespace = indexOfSeparator === -1 ? "minecraft" : namespace.substring(0, indexOfSeparator);
     }
-    if (!/^[a-z0-9_.-]*$/g.test(namespace)) throw new SyntaxError("Invalid resource location: non [a-z0-9_.-] character in namespace");
-    if (!/^[a-z0-9/_.-]*$/g.test(path)) throw new SyntaxError("Invalid resource location: non [a-z0-9/_.-] character in path");
+    if (!/^[a-z0-9_.-]*$/.test(namespace)) throw new SyntaxError("Invalid resource location: non [a-z0-9_.-] character in namespace");
+    if (!/^[a-z0-9/_.-]*$/.test(path)) throw new SyntaxError("Invalid resource location: non [a-z0-9/_.-] character in path");
     this.namespace = namespace;
     this.path = path;
   }
