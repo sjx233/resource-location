@@ -13,9 +13,9 @@ class ResourceLocation {
     return this.path;
   }
 
-  public constructor(namespace: string, path?: string, separator = ":") {
+  public constructor(namespace: string, path?: string) {
     if (!path) {
-      const indexOfSeparator = namespace.indexOf(separator);
+      const indexOfSeparator = namespace.indexOf(":");
       path = namespace.substring(indexOfSeparator + 1);
       namespace = indexOfSeparator === -1 ? "minecraft" : namespace.substring(0, indexOfSeparator);
     }
