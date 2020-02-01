@@ -17,18 +17,19 @@
   },
   "repository": "github:sjx233/resource-location",
   "scripts": {
-    "lint": "tslint --project .",
-    "lint-fix": "tslint --project . --fix",
-    "build": "rm -rf lib && tsc",
+    "lint": "eslint --ext .js,.ts src",
+    "build": "tsc",
     "test": "node lib/test/test.js",
     "preversion": "npm run build && npm test",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^10.12.18",
-    "tslint": "^5.12.1",
-    "typescript": "^3.2.4"
+    "@types/node": "^13.7.0",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.5"
   },
   "engines": {
     "node": ">=6.0.0"

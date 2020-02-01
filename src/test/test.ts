@@ -1,6 +1,6 @@
-import assert from "assert";
-import path from "path";
-import ResourceLocation from "../index";
+import * as assert from "assert";
+import * as path from "path";
+import ResourceLocation = require("../index");
 
 const obj1 = new ResourceLocation("namespace", "path");
 const obj2 = new ResourceLocation("path");
@@ -8,9 +8,11 @@ const obj3 = new ResourceLocation("namespace:path");
 assert.strictEqual(obj1.namespace, "namespace");
 assert.strictEqual(obj1.path, "path");
 assert.strictEqual(obj1.toString(), "namespace:path");
+assert.strictEqual(JSON.stringify(obj1), "\"namespace:path\"");
 assert.strictEqual(obj2.namespace, "minecraft");
 assert.strictEqual(obj2.path, "path");
 assert.strictEqual(obj2.toString(), "minecraft:path");
+assert.strictEqual(JSON.stringify(obj2), "\"minecraft:path\"");
 assert.deepStrictEqual(obj3, obj1);
 assert.throws(() => new ResourceLocation("Path"));
 assert.throws(() => new ResourceLocation("Namespace", "path"));
